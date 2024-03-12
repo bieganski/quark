@@ -301,11 +301,11 @@ main(int argc, char *argv[])
 		}
 
 		/* drop root */
-		if (pwd->pw_uid == 0 || grp->gr_gid == 0) {
-			die("Won't run under root %s for hopefully obvious reasons",
-			    (pwd->pw_uid == 0) ? (grp->gr_gid == 0) ?
-			    "user and group" : "user" : "group");
-		}
+		// if (pwd->pw_uid == 0 || grp->gr_gid == 0) {
+		// 	die("Won't run under root %s for hopefully obvious reasons",
+		// 	    (pwd->pw_uid == 0) ? (grp->gr_gid == 0) ?
+		// 	    "user and group" : "user" : "group");
+		// }
 
 		if (setgroups(1, &(grp->gr_gid)) < 0) {
 			if (errno == EPERM) {
